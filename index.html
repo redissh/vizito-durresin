@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vizito Durrësin</title>
+    
+    <!-- Import Google Font (Poppins) -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        /* First Section (Hero) */
+        .hero-section {
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://eia476h758b.exactdn.com/wp-content/uploads/2022/03/Durres-3.jpeg?strip=all&lossy=1&ssl=1');
+            background-size: cover;
+            background-position: center;
+            filter: blur(4px);
+            z-index: -1;
+        }
+
+        nav {
+            padding: 20px 50px;
+            display: flex;
+            justify-content: flex-end;
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+
+        .hero {
+            text-align: center;
+            color: white;
+            margin-top: 15vh;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+
+        /* Hero Button */
+        .hero-button {
+            display: inline-block;
+            margin-top: 120px;
+            padding: 15px 30px; /* Larger padding */
+            background-color: #0984e3;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.1em; /* Larger font size */
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+        }
+
+        .hero-button:hover {
+            background-color: #0767b1;
+            transform: scale(1.05); /* Slightly enlarge on hover */
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+        }
+
+        /* Wave SVG */
+        .wave {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: auto;
+            z-index: 1;
+        }
+
+        /* Second Section (Events) */
+        .events-section {
+            background-color: #f5f5f5;
+            padding: 60px 0;
+        }
+
+        .events-section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: #2d3436;
+            font-family: 'Poppins', sans-serif;
+            position: relative;
+        }
+
+        .events-section h2::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: -15px;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background-color: #0984e3;
+            border-radius: 2px;
+        }
+
+        .container {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 50px;
+        }
+
+        .scroll-wrapper {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .events-container {
+            display: flex;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            gap: 30px;
+            padding: 20px 0;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        .events-container::-webkit-scrollbar {
+            display: none;
+        }
+
+        .event-card {
+            flex: 0 0 350px;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .card-image {
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .card-content {
+            padding: 25px;
+        }
+
+        .card-content h3 {
+            color: #2d3436;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+
+        .card-content p {
+            color: #636e72;
+            font-size: 0.9em;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .learn-more {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #0984e3;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 0.9em;
+            transition: background-color 0.3s ease;
+        }
+
+        .learn-more:hover {
+            background-color: #0767b1;
+        }
+
+        .scroll-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            z-index: 1;
+        }
+
+        .scroll-arrow:hover {
+            background: #f8f8f8;
+        }
+
+        .arrow-left {
+            left: 0;
+        }
+
+        .arrow-right {
+            right: 0;
+        }
+
+        .arrow-icon {
+            width: 24px;
+            height: 24px;
+        }
+    </style>
+</head>
+<body>
+    <!-- First Section (Hero) -->
+    <section class="hero-section">
+        <div class="hero">
+            <h1>MIRËSEVINI NE DURRËS</h1>
+            <p>Zbuloni bukuritë natyrore të qytetit të Durrësit.</p>
+            <a href="https://earth.google.com/web/@41.31429047,19.43804292,80.88291182a,5389.0518111d,35y,51.52430783h,64.76859281t,0r/data=CgRCAggBOgMKATBCAggASg0I____________ARAA" class="hero-button">SHIKO QYTETIN NË HARTË 3D</a>
+        </div>
+
+        <!-- Wave SVG -->
+        <svg class="wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+            <path fill="#fff" fill-opacity="1" d="M0,160L48,149.3C96,139,192,117,288,128C384,139,480,181,576,192C672,203,768,181,864,160C960,139,1056,117,1152,112C1248,107,1344,117,1392,122.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+        </svg>
+    </section>
+
+    <!-- Second Section (Events) -->
+    <section class="events-section">
+        <h2>Eksploroni Plazhet e Durrësit</h2>
+        <div class="container">
+            <div class="scroll-wrapper">
+                <div class="events-container">
+                    <!-- Event Cards -->
+                    <div class="event-card">
+                        <div class="card-image" style="background-image: url('images/kepi\ rodonit.jpg')"></div>
+                        <div class="card-content">
+                            <h3>Kepi i Rodonit</h3>
+                            <p>Kepi i Rodonit, rreth 20 km në veriperëndim të Durrësit, është një vend historik dhe natyror i mrekullueshëm. Ky destinacion ofron një kombinim unik të natyrës, historisë dhe turizmit. Vizitorët mund të eksplorojnë kështjellën dhe të shijojnë mundësitë për hiking.</p>
+                            <a href="pages/rodon.html" class="learn-more">Mëso më shumë</a>
+                        </div>
+                    </div>
+
+                    <div class="event-card">
+                        <div class="card-image" style="background-image: url('images/gjiri\ lalzit.jpg')"></div>
+                        <div class="card-content">
+                            <h3>Gjiri i Lalzit</h3>
+                            <p>Gjiri i Lalëzit, rreth 10 km në veriperëndim të Durrësit, është një destinacion bregdetar i bukur, me plazhe të gjata rëre dhe shkëmbinj. Zona ofron mundësi akomodimi me hotele, vila dhe apartamente, si dhe mundësi për relaksim dhe aktivitete ujore si noti dhe çiklizmi.</p>
+                            <a href="pages/gjiri-lalzit.html" class="learn-more">Mëso më shumë</a>
+                        </div>
+                    </div>
+
+                    <div class="event-card">
+                        <div class="card-image" style="background-image: url('images/hamallaj.jpg')"></div>
+                        <div class="card-content">
+                            <h3>Plazhi Hamallaj</h3>
+                            <p>Plazhi i Hamallaj, 17 km në veri të Durrësit, ndodhet në një zonë të qetë dhe natyrore, i rrethuar nga shkëmbinj dhe gjelbërim. Ky plazh i pa mbipopulluar ofron mundësi për relaksim, me disa hotele dhe komplekse turistike për akomodim.</p>
+                            <a href="pages/hamallaj.html" class="learn-more">Mëso më shumë</a>
+                        </div>
+                    </div>
+
+                    <div class="event-card">
+                        <div class="card-image" style="background-image: url('images/currila.jpg')"></div>
+                        <div class="card-content">
+                            <h3>Currila</h3>
+                            <p>Currilat, shumë pranë qendrës së Durrësit, janë të njohura për ujërat e pastra, rërën e butë dhe atmosferën relaksuese. Zona është e zhvilluar, me bare dhe restorante për pushime pranë detit, dhe ofron plazhe private dhe publike.</p>
+                            <a href="pages/currila.html" class="learn-more">Mëso më shumë</a>
+                        </div>
+                    </div>
+
+                    <div class="event-card">
+                        <div class="card-image" style="background-image: url('images/portoromano.jpg')"></div>
+                        <div class="card-content">
+                            <h3>Portoromano-Bishtpall</h3>
+                            <p>Plazhi i Portoromano-Bishtpallës, në jug të Durrësit, është një vend i qetë dhe i paprekur nga turizmi masiv, me rërë të imët dhe ujëra të pastra. Ky plazh ofron një atmosferë natyrale, pa restorante dhe bare të shumta, i cili është perfekt për shëtitje buzë detit.</p>
+                            <a href="pages/portoromano-bishtpall.html" class="learn-more">Mëso më shumë</a>
+                        </div>
+                    </div>
+
+                    <div class="event-card">
+                        <div class="card-image" style="background-image: url('images/mali\ robit.jpg')"></div>
+                        <div class="card-content">
+                            <h3>Mali i Robit</h3>
+                            <p>Mali i Robit, një nga destinacionet më të njohura në bregdetin shqiptar, ndodhet në jug të Golemit. Zona ofron një përzierje të bukur mes natyrës dhe zhvillimit turistik, duke tërhequr vizitorë vendas dhe të huaj çdo vit. Plazhi  është i rrethuar nga resorte, hotele dhe vila private.</p>
+                            <a href="pages/Mali-i-robit.html" class="learn-more">Mëso më shumë</a>
+                        </div>
+                    </div>
+
+                    <div class="event-card">
+                        <div class="card-image" style="background-image: url('images/zona\ bregdetare\ 2.jpg')"></div>
+                        <div class="card-content">
+                            <h3>Vija Bregdetare e Durresit</h3>
+                            <p>Zona bregdetare e plazhit shtrihet për rreth 4-5 km dhe ofron një kombinim të zhvillimit dhe natyrës. Pjesa më e zhvilluar ka hotele, restorante dhe aktivitete ujore, dhe është shumë e frekuentuar nga turistët. Më tutje, plazhi bëhet më i hapur dhe i qetë.</p>
+                            <a href="pages/vijabregdetare.html" class="learn-more">Mëso më shumë</a>
+                        </div>
+                    </div>
+
+                    <div class="event-card">
+                        <div class="card-image" style="background-image: url('images/kallm.jpg')"></div>
+                        <div class="card-content">
+                            <h3>Plazhi i Kallmit</h3>
+                            <p>Plazhi i Kallmit është një destinacion ideal për ata që kërkojnë një plazh të qetë dhe një eksperiencë më ekskluzive. Udhëtimi zgjat rreth 10-15 minuta nga Durrësi, duke ndjekur rrugën drejt Jugut dhe tabelat udhëzuese për Kallm.</p>
+                            <a href="pages/kallm.html" class="learn-more">Mëso më shumë</a>
+                        </div>
+                    </div>
+
+                    <div class="event-card">
+                        <div class="card-image" style="background-image: url('images/plepa-golem.jpg')"></div>
+                        <div class="card-content">
+                            <h3>Plepat</h3>
+                            <p>Zona e Plepave, e njohur për resortet dhe hotelet si Tropikali, tërheq turistë gjatë verës dhe ofron transport të rregullt me autobus ose biçikletë për një përvojë më të këndshme.</p>
+                            <a href="pages/plepa.html" class="learn-more">Mëso më shumë</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigation Arrows -->
+                <button class="scroll-arrow arrow-left">
+                    <svg class="arrow-icon" viewBox="0 0 24 24">
+                        <path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"/>
+                    </svg>
+                </button>
+                <button class="scroll-arrow arrow-right">
+                    <svg class="arrow-icon" viewBox="0 0 24 24">
+                        <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const scrollContainer = document.querySelector('.events-container');
+        const arrowLeft = document.querySelector('.arrow-left');
+        const arrowRight = document.querySelector('.arrow-right');
+
+        arrowLeft.addEventListener('click', () => {
+            scrollContainer.scrollBy({
+                left: -scrollContainer.offsetWidth,
+                behavior: 'smooth'
+            });
+        });
+
+        arrowRight.addEventListener('click', () => {
+            scrollContainer.scrollBy({
+                left: scrollContainer.offsetWidth,
+                behavior: 'smooth'
+            });
+        });
+
+        const checkScrollPosition = () => {
+            const { scrollLeft, scrollWidth, clientWidth } = scrollContainer;
+            arrowLeft.style.display = scrollLeft <= 0 ? 'none' : 'flex';
+            arrowRight.style.display = scrollLeft + clientWidth >= scrollWidth ? 'none' : 'flex';
+        };
+
+        scrollContainer.addEventListener('scroll', checkScrollPosition);
+        window.addEventListener('resize', checkScrollPosition);
+        checkScrollPosition();
+    </script>
+    
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+    <df-messenger
+      chat-icon="https:&#x2F;&#x2F;cdn-icons-png.flaticon.com&#x2F;512&#x2F;1908&#x2F;1908337.png"
+      intent="WELCOME"
+      chat-title="VizitoDurrësin_Bot"
+      agent-id="abbbdfeb-b643-487c-8847-7975e8c98c3a"
+      language-code="sq"
+    ></df-messenger>
+</body>
+</html>

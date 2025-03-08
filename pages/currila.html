@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currila</title>
+    <!-- Add Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Base Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            background: #f8f9fa;
+        }
+
+        .tour-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 40px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        h1 {
+            color: #2c3e50;
+            font-size: 2.5rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: #3498db;
+            border-radius: 2px;
+        }
+
+        p {
+            color: #34495e;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            height: fit-content;
+        }
+
+        .image-item {
+            height: 280px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .image-item::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.2);
+            transition: opacity 0.3s ease;
+        }
+
+        .image-item:hover {
+            transform: scale(1.03);
+        }
+
+        .image-item:hover::after {
+            opacity: 0;
+        }
+
+        .learn-more {
+            display: inline-flex;
+            align-items: center;
+            padding: 15px 35px;
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            margin-top: 20px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(52,152,219,0.3);
+        }
+
+        .learn-more:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(52,152,219,0.4);
+        }
+
+        .learn-more::after {
+            content: '→';
+            margin-left: 10px;
+            transition: margin 0.3s ease;
+        }
+
+        .learn-more:hover::after {
+            margin-left: 15px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .tour-section {
+                grid-template-columns: 1fr;
+                margin: 30px auto;
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .image-item {
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="tour-section">
+        <div class="content">
+            <h1>Currila</h1>
+            <p>Plazhi i Currilës, shumë pranë qendrës së Durrësit, është një destinacion i njohur për ujërat e pastra dhe rërën e butë. Ky plazh ofron një atmosferë relaksuese dhe është shumë i frekuentuar nga turistët dhe vendasit. Zona është e zhvilluar me bare dhe restorante, duke ofruar mundësi për pushime të rehatshme pranë detit. Plazhi ka një ambient më të qetë krahasuar me pjesët e tjera të Durrësit, dhe është ideal për not, çiklizëm, ose shëtitje përgjatë bregut. Për të arritur në Currila, mund të përdorni autobus që lidh Durrësin me plazhin, ose të shkoni me makinë, dhe mund të ecni në këmbë nëse preferoni një udhëtim më të gjatë. </p>
+            <a href="https://earth.google.com/web/@41.32008295,19.43084162,-0.24967997a,642.20645278d,35y,45.29590481h,61.2822267t,0r/data=CgRCAggBOgMKATBCAggASg0I____________ARAA" class="learn-more">Shiko në hartë 3D</a>
+        </div>
+
+        <div class="image-grid">
+            <div class="image-item" style="background-image: url('imgcu/1.jpg')"></div>
+            <div class="image-item" style="background-image: url('imgcu/2.jpg')"></div>
+            <div class="image-item" style="background-image: url('imgcu/3.jpg')"></div>
+            <div class="image-item" style="background-image: url('imgcu/4.jpg')"></div>
+        </div>
+    </section>
+</body>
+</html>

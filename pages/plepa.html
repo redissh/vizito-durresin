@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plazhi i Plepave</title>
+    <!-- Add Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Base Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            background: #f8f9fa;
+        }
+
+        .tour-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 40px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        h1 {
+            color: #2c3e50;
+            font-size: 2.5rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: #3498db;
+            border-radius: 2px;
+        }
+
+        p {
+            color: #34495e;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            height: fit-content;
+        }
+
+        .image-item {
+            height: 280px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .image-item::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.2);
+            transition: opacity 0.3s ease;
+        }
+
+        .image-item:hover {
+            transform: scale(1.03);
+        }
+
+        .image-item:hover::after {
+            opacity: 0;
+        }
+
+        .learn-more {
+            display: inline-flex;
+            align-items: center;
+            padding: 15px 35px;
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            margin-top: 20px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(52,152,219,0.3);
+        }
+
+        .learn-more:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(52,152,219,0.4);
+        }
+
+        .learn-more::after {
+            content: '→';
+            margin-left: 10px;
+            transition: margin 0.3s ease;
+        }
+
+        .learn-more:hover::after {
+            margin-left: 15px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .tour-section {
+                grid-template-columns: 1fr;
+                margin: 30px auto;
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .image-item {
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="tour-section">
+        <div class="content">
+            <h1>Plazhi i Plepave</h1>
+            <p>Zona e Plepave është një destinacion i njohur turistik, i cili ofron një kombinim të përkryer mes qetësisë dhe shërbimeve cilësore për pushuesit. Kjo zonë shquhet për resortet dhe hotelet e shumta, të cilat tërheqin vizitorë nga vendi dhe jashtë tij. Një nga resortet më të njohura është Tropikali, i cili gjatë sezonit veror frekuentohet nga një numër i madh turistësh që kërkojnë një ambient të qetë buzë detit. Për të arritur në këtë zonë, ju mund të përdorni autobusin Durrës-Plepa, i cili është në dispozicion çdo 8 minuta. Megjithatë, për një përvojë më të veçantë dhe për të shijuar plotësisht pamjen e mrekullueshme të bregdetit, përdorimi i biçikletës mbetet një alternativë e shkëlqyer për lëvizje. Zona e Plepave është ideale për ata që kërkojnë një vend pushimi të qetë, me akomodim cilësor dhe ushqim të shijshëm, ku mikpritja është një vlerë e shtuar për çdo vizitor. </p>
+            <a href="https://earth.google.com/web/search/Plepa,+Durr%c3%abs/@41.29194268,19.5068247,1.57262636a,2136.80296131d,35y,66.18222102h,62.70796269t,360r/data=Cn0aTxJJCiUweDEzNGZkOTA4OTYxMGNiNTk6MHg5MTMzYjYyYzQxMjY5ZmVmGd-ocF9ipURAIVMkusIWgjNAKg5QbGVwYSwgRHVycsOrcxgBIAEiJgokCR6UJPsou0RAEcFZCvuppERAGZThn4eEozNAIbx-f5-PZjNAQgIIAToDCgEwQgIIAEoNCP___________wEQAA" class="learn-more">Shiko në hartë 3D</a>
+        </div>
+
+        <div class="image-grid">
+            <div class="image-item" style="background-image: url('imgplp/1.jpg')"></div>
+            <div class="image-item" style="background-image: url('imgplp/2.jpg')"></div>
+            <div class="image-item" style="background-image: url('imgplp/3.jpg')"></div>
+            <div class="image-item" style="background-image: url('imgplp/4.jpg')"></div>
+        </div>
+    </section>
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plazhi i Portoromano-Bishtpallës</title>
+    <!-- Add Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Base Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            background: #f8f9fa;
+        }
+
+        .tour-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 40px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        h1 {
+            color: #2c3e50;
+            font-size: 2.5rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: #3498db;
+            border-radius: 2px;
+        }
+
+        p {
+            color: #34495e;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            height: fit-content;
+        }
+
+        .image-item {
+            height: 280px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .image-item::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.2);
+            transition: opacity 0.3s ease;
+        }
+
+        .image-item:hover {
+            transform: scale(1.03);
+        }
+
+        .image-item:hover::after {
+            opacity: 0;
+        }
+
+        .learn-more {
+            display: inline-flex;
+            align-items: center;
+            padding: 15px 35px;
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            margin-top: 20px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(52,152,219,0.3);
+        }
+
+        .learn-more:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(52,152,219,0.4);
+        }
+
+        .learn-more::after {
+            content: '→';
+            margin-left: 10px;
+            transition: margin 0.3s ease;
+        }
+
+        .learn-more:hover::after {
+            margin-left: 15px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .tour-section {
+                grid-template-columns: 1fr;
+                margin: 30px auto;
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .image-item {
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="tour-section">
+        <div class="content">
+            <h1>Plazhi i Portoromano-Bishtpallës</h1>
+            <p>Plazhi i Portoromano-Bishtpallës ndodhet në jug të Durrësit, një vend i qetë dhe i paprekur nga turizmi masiv. Ky plazh ka rërë të imët dhe ujëra të pastra, ideale për not dhe relaksim. Nuk është i mbushur me restorante dhe bare të shumta, duke ruajtur një atmosferë natyrale dhe pa zhurmën e qytetit. Vegetacioni përreth e bën këtë plazh edhe më të bukur, duke ofruar mundësi për shëtitje të qeta buzë detit. Arritja është e lehtë, me makinë, autobus ose biçikletë. Per te mberritur ne destinacion keni mundesi te merni autobuzin e linjes durres -portoromano nje rrugetim I cili zgjat 20-30 minuta. Ndalesa ne stacionin e fundit esht destinacioni juaj, per te mberritur ne bisht pall ju mund te zgjidhni te merni nje biciklet ose te ecni ne kembe duke shijuaj vendet perreth dhe natyren e mrekullueshme.</p>
+            <a href="https://earth.google.com/web/search/Porto+Romano,+Rruga+Punishte+e+Barutit,+Durr%c3%abs/@41.36471778,19.41929765,-0.80663461a,801.59866451d,35y,64.9338486h,62.96998797t,359.99999977r/data=Cp4BGnASagolMHgxMzRmZDA2MTFkNjY1ZjdmOjB4OTgwYzBhZDcyMDQxNTExYxl6nuSz4a5EQCGOLbqrDWwzQCovUG9ydG8gUm9tYW5vLCBScnVnYSBQdW5pc2h0ZSBlIEJhcnV0aXQsIER1cnLDq3MYAiABIiYKJAkelCT7KLtEQBHBWQr7qaREQBmU4Z-HhKMzQCG8fn-fj2YzQEICCAE6AwoBMEICCABKDQj___________8BEAA" class="learn-more">Shiko në hartë 3D</a>
+        </div>
+
+        <div class="image-grid">
+            <div class="image-item" style="background-image: url('imgpb/1.jpg')"></div>
+            <div class="image-item" style="background-image: url('imgpb/2.jpg')"></div>
+            <div class="image-item" style="background-image: url('imgpb/3.jpg')"></div>
+            <div class="image-item" style="background-image: url('imgpb/4.jpg')"></div>
+        </div>
+    </section>
+</body>
+</html>

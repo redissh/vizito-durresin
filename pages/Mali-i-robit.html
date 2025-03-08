@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mali i Robit</title>
+    <!-- Add Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Base Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            background: #f8f9fa;
+        }
+
+        .tour-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 40px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        h1 {
+            color: #2c3e50;
+            font-size: 2.5rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: #3498db;
+            border-radius: 2px;
+        }
+
+        p {
+            color: #34495e;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            height: fit-content;
+        }
+
+        .image-item {
+            height: 280px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .image-item::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.2);
+            transition: opacity 0.3s ease;
+        }
+
+        .image-item:hover {
+            transform: scale(1.03);
+        }
+
+        .image-item:hover::after {
+            opacity: 0;
+        }
+
+        .learn-more {
+            display: inline-flex;
+            align-items: center;
+            padding: 15px 35px;
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            margin-top: 20px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(52,152,219,0.3);
+        }
+
+        .learn-more:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(52,152,219,0.4);
+        }
+
+        .learn-more::after {
+            content: '→';
+            margin-left: 10px;
+            transition: margin 0.3s ease;
+        }
+
+        .learn-more:hover::after {
+            margin-left: 15px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .tour-section {
+                grid-template-columns: 1fr;
+                margin: 30px auto;
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .image-item {
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="tour-section">
+        <div class="content">
+            <h1>Mali i Robit</h1>
+            <p>Mali i Robit, një nga destinacionet më të njohura turistike në bregdetin shqiptar, ndodhet në jug të Golemit. Ky vend ofron një kombinim të shkëlqyer mes natyrës dhe zhvillimit turistik, duke tërhequr çdo vit vizitorë vendas dhe të huaj. Plazhi i tij i gjatë dhe i mbushur me resortet, hotelet dhe vilat private, ofron një atmosferë më të qetë krahasuar me pjesët më të populluara të Durrësit. Ky është një vend ideal për ata që kërkojnë pushime në natyrë, larg zhurmës së qytetit. Pjesa e tij më e gjelbër dhe më pak e ndotur e bregdetit të bën të ndihesh si në një oazë. Për të arritur në Malin e Robit nga Durrësi, mund të përdorni makinën personale, e cila të çon në destinacion për rreth 20 minuta. Po ashtu, mund të përdorni transportin publik me autobus që lidh Durrësin me Kavajën dhe Golemin, me udhëtim që zgjat rreth 20-30 minuta. Ky është një vend perfekt për pushime të qeta, qoftë për një fundjavë ose për një sezon veror. Me ajrin e pastër dhe bukuritë natyrore, Mali i Robit është një mundësi ideale për të shpëtuar nga rutina e përditshme. </p>
+            <a href="https://earth.google.com/web/search/Mali+i+Robit,+Golem/@41.22953934,19.52685498,5.64226259a,4778.86943016d,35y,92.4844642h,70.43454535t,360r/data=CoIBGlQSTgolMHgxMzRmZGYxZWUwOWNlNDkzOjB4YTFlOGZjNGY1NmM5Njk5NxnDPqZasJ1EQCHLOtLPioYzQCoTTWFsaSBpIFJvYml0LCBHb2xlbRgCIAEiJgokCXxZioumoURAEYwkykl0mkRAGcw1E1LwjjNAIaGQPr7zgDNAQgIIAToDCgEwQgIIAEoNCP___________wEQAA" class="learn-more">Shiko në hartë 3D</a>
+        </div>
+
+        <div class="image-grid">
+            <div class="image-item" style="background-image: url('imgmrb/1.jpg')"></div>
+            <div class="image-item" style="background-image: url('imgmrb/2.jpg')"></div>
+            <div class="image-item" style="background-image: url('imgmrb/3.jpg')"></div>
+            <div class="image-item" style="background-image: url('imgmrb/4.jpg')"></div>
+        </div>
+    </section>
+</body>
+</html>
