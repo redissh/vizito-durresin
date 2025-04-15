@@ -165,5 +165,182 @@
       language-code="sq"
     ></df-messenger>
     
+</body
+
+<head>
+  <meta charset="UTF-8">
+  <title>Restaurant Reviews Carousel</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 40px;
+    }
+
+    .carousel-wrapper {
+      position: relative;
+      max-width: 100%;
+    }
+
+    .carousel-container {
+      display: flex;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      scroll-snap-type: x mandatory;
+      gap: 20px;
+      padding: 20px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .review-card {
+      flex: 0 0 300px;
+      scroll-snap-align: start;
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid #ddd;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .review-header {
+      padding: 15px;
+    }
+
+    .restaurant-name {
+      font-size: 18px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .review-stars {
+      color: #f5a623;
+      margin: 0 15px;
+      font-size: 18px;
+    }
+
+    .review-body {
+      padding: 10px 15px;
+      font-size: 14px;
+      flex-grow: 1;
+    }
+
+    .review-img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .see-more {
+      text-align: right;
+      padding: 10px 15px;
+    }
+
+    .see-more a {
+      text-decoration: none;
+      color: #1a73e8;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .see-more a:hover {
+      text-decoration: underline;
+    }
+
+    .arrow-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: #fff;
+      border: none;
+      font-size: 24px;
+      padding: 10px;
+      cursor: pointer;
+      z-index: 10;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      border-radius: 50%;
+    }
+
+    .arrow-btn:hover {
+      background: #f0f0f0;
+    }
+
+    .arrow-left {
+      left: 0;
+    }
+
+    .arrow-right {
+      right: 0;
+    }
+  </style>
+</head>
+<body>
+
+<div class="carousel-wrapper">
+  <button class="arrow-btn arrow-left" onclick="scrollCarousel(-1)">&#8592;</button>
+  <div class="carousel-container" id="carousel">
+
+    <!-- Slide 1 -->
+    <div class="review-card">
+      <div class="review-header">
+        <div class="restaurant-name">Bar Restorant "Il Capitano"</div>
+      </div>
+      <div class="review-stars">★★★★☆</div>
+      <div class="review-body">Ky lokal përfaqëson një zgjedhje ideale për një ndalesë dreke pas një udhëtimi panoramik. Ofron një ambient të qetë dhe mikpritës, shërbim korrekt nga stafi dhe një menu të përgatitur me përbërës vendas.
+
+        Specialitetet përfshijnë peshk të freskët dhe gatime tradicionale të zonës. Çmimet mesatare variojnë nga 2,000 deri në 2,500 lekë për person.
+        
+         Klientëve u vihet në dispozicion një hapësirë parkimi falas.</div>
+      <img class="review-img" src="https://scontent.ftia11-1.fna.fbcdn.net/v/t39.30808-6/487129803_2151544832029263_6398583318067869086_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=0b6b33&_nc_ohc=Rcddohg7sLEQ7kNvwGs_tnw&_nc_oc=AdnbZVYhbv7zGQIxlvZ5DBt2IN5-Io1fQPNwG7BWDr7naAJANVdu6QsNw0tfnenQNmg&_nc_zt=23&_nc_ht=scontent.ftia11-1.fna&_nc_gid=d90r9VaebVaD9nQcS2mdyA&oh=00_AfEAaehiLLaPpGVYx_dhcevyro2Fn4vUAe7s4wedlOWlow&oe=6803D5E7">
+      <div class="see-more">
+        <a href="https://www.google.com/maps/place/Bar+Restorant+%22Il+Capitano%22/@41.562882,19.4592754,17z/data=!3m1!4b1!4m6!3m5!1s0x134e2c0fdf1b71ed:0xc98dd8852524a7aa!8m2!3d41.562878!4d19.4618503!16s%2Fg%2F11d_1nw4hr?entry=ttu&g_ep=EgoyMDI1MDQwOS4wIKXMDSoASAFQAw%3D%3D" target="_blank">SHIKO NE HARTE</a>
+      </div>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="review-card">
+      <div class="review-header">
+        <div class="restaurant-name">Luxury Apartments Cape of Rodon</div>
+      </div>
+      <div class="review-stars">★★★★★</div>
+      <div class="review-body">Një vend ideal për të relaksuar, me dhoma moderne, kuzhinë të shkëlqyer dhe pamje të mrekullueshme. Nuk ka plazh privat, por ai ndodhet vetëm 10 minuta me makinë. Ideal për ata që vlerësojnë qetësinë dhe turmat e vogla, ky vend është me të vërtetë për t'u konsideruar.</div>
+      <img class="review-img" src="https://lh3.googleusercontent.com/p/AF1QipOeZj0NENGNkCRV55WD9v58FaEa2Y8FpbJOrZO-=s1360-w1360-h1020" alt="Restaurant">
+      <div class="see-more">
+        <a href="https://www.google.com/maps/place/Luxury+Apartments+Cape+of+Rodon/@41.5706571,19.4876064,17z/data=!4m16!1m9!3m8!1s0x134e2905815a2da5:0xbeb4e78b8bbb1802!2sLuxury+Apartments+Cape+of+Rodon!8m2!3d41.5706531!4d19.4901813!9m1!1b1!16s%2Fg%2F11kqrwvv90!3m5!1s0x134e2905815a2da5:0xbeb4e78b8bbb1802!8m2!3d41.5706531!4d19.4901813!16s%2Fg%2F11kqrwvv90?entry=ttu&g_ep=EgoyMDI1MDQwOS4wIKXMDSoASAFQAw%3D%3D" target="_blank">SHIKO NE HARTE</a>
+      </div>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="review-card">
+      <div class="review-header">
+        <div class="restaurant-name">Restorant Saint Michelle Camping Hotel</div>
+      </div>
+      <div class="review-stars">★★★★★</div>
+      <div class="review-body">Fresh, delicious rolls with great presentation. Try the volcano roll!</div>
+      <img class="review-img" src="https://lh3.googleusercontent.com/p/AF1QipPYKtZeWo6x68CqQkzfjiFpkThm_UV3TxqEJFv3=s1360-w1360-h1020" alt="Restaurant">
+      <div class="see-more">
+        <a href="https://www.google.com/maps/place/Restorant+Saint+Michelle+Camping+Hotel/@41.569166,19.4874859,17z/data=!3m1!4b1!4m9!3m8!1s0x134e29bff3df3745:0x67f634f395f85388!5m2!4m1!1i2!8m2!3d41.569166!4d19.4874859!16s%2Fg%2F11g0q6g6hs?entry=ttu&g_ep=EgoyMDI1MDQwOS4wIKXMDSoASAFQAw%3D%3D" target="_blank">SHIKO NE HARTE</a>
+      </div>
+    </div>
+
+
+  </div>
+  <button class="arrow-btn arrow-right" onclick="scrollCarousel(1)">&#8594;</button>
+</div>
+
+<script>
+  function scrollCarousel(direction) {
+    const container = document.getElementById("carousel");
+    const scrollAmount = 320; // width + margin
+    container.scrollBy({
+      left: direction * scrollAmount,
+      behavior: "smooth"
+    });
+  }
+</script>
+
 </body>
 </html>
