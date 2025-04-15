@@ -155,12 +155,186 @@
         </div>
     </section>
       <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
-    <df-messenger
-      chat-icon="https:&#x2F;&#x2F;cdn-icons-png.flaticon.com&#x2F;512&#x2F;1908&#x2F;1908337.png"
-      intent="WELCOME"
-      chat-title="VizitoDurrësin_Bot"
-      agent-id="abbbdfeb-b643-487c-8847-7975e8c98c3a"
-      language-code="sq"
-    ></df-messenger>
+
+    <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 40px;
+    }
+
+    .carousel-wrapper {
+      position: relative;
+      max-width: 100%;
+    }
+
+    .carousel-container {
+      display: flex;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      scroll-snap-type: x mandatory;
+      gap: 20px;
+      padding: 20px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .review-card {
+      flex: 0 0 300px;
+      scroll-snap-align: start;
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid #ddd;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .review-header {
+      padding: 15px;
+    }
+
+    .restaurant-name {
+      font-size: 18px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .review-stars {
+      color: #f5a623;
+      margin: 0 15px;
+      font-size: 18px;
+    }
+
+    .review-body {
+      padding: 10px 15px;
+      font-size: 14px;
+      flex-grow: 1;
+    }
+
+    .review-img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .see-more {
+      text-align: right;
+      padding: 10px 15px;
+    }
+
+    .see-more a {
+      text-decoration: none;
+      color: #1a73e8;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .see-more a:hover {
+      text-decoration: underline;
+    }
+
+    .arrow-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: #fff;
+      border: none;
+      font-size: 24px;
+      padding: 10px;
+      cursor: pointer;
+      z-index: 10;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      border-radius: 50%;
+    }
+
+    .arrow-btn:hover {
+      background: #f0f0f0;
+    }
+
+    .arrow-left {
+      left: 0;
+    }
+
+    .arrow-right {
+      right: 0;
+    }
+  </style>
+</head>
+<body>
+
+<div class="carousel-wrapper">
+  <button class="arrow-btn arrow-left" onclick="scrollCarousel(-1)">&#8592;</button>
+  <div class="carousel-container" id="carousel">
+
+    <!-- Slide 1 -->
+    <div class="review-card">
+      <div class="review-header">
+        <div class="restaurant-name">Aqua Lounge Bar & Restaurant</div>
+      </div>
+      <div class="review-stars">★★★★★</div>
+      <div class="review-body">Ky bar lounge ofron atmosferën perfekte për të shijuar perëndimin e diellit me një koktej në dorë. Ambient modern, muzikë e lehtë, shërbim i shkëlqyer dhe pamje mahnitëse drejt detit. Ideale për çlodhje pasditeje apo netë verore nën yje.</div>
+      <img class="review-img" src="https://lh3.googleusercontent.com/p/AF1QipMFNj6jhuyYDzz5f8Sq0DwBk4gPbtK9J4ebakmo=s1360-w1360-h1020">
+      <div class="see-more">
+        <a href="https://www.google.com/maps/place/Aqua+Lounge+Bar+%26+Restaurant/@41.3163253,19.4329488,17z/data=!4m15!1m8!3m7!1s0x134fdb3e6a59cc89:0xb0476d3da8989b99!2sAqua+Lounge+Bar+%26+Restaurant!8m2!3d41.3162783!4d19.4326381!10e5!16s%2Fg%2F11rr873n3r!3m5!1s0x134fdb3e6a59cc89:0xb0476d3da8989b99!8m2!3d41.3162783!4d19.4326381!16s%2Fg%2F11rr873n3r?entry=ttu&g_ep=EgoyMDI1MDQwOS4wIKXMDSoASAFQAw%3D%3D" target="_blank">SHIKO NE HARTE</a>
+      </div>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="review-card">
+      <div class="review-header">
+        <div class="restaurant-name">White Hill Hotel</div>
+      </div>
+      <div class="review-stars">★★★★★</div>
+      <div class="review-body">Restoranti ofron shërbim të shkëlqyer dhe një atmosferë mikpritëse. Stafi është i sjellshëm dhe profesional, duke siguruar një shërbim të shpejtë dhe të kujdesshëm. Ushqimi është i shijshëm, me peshk të freskët dhe pjatat tradicionale të përgatitura me kujdes. Vendi ka një pamje relaksuese, ideale për një pushim të qetë.</div>
+      <img class="review-img" src="https://lh3.googleusercontent.com/gps-cs-s/AB5caB8oTbisvfL6N9qvZGqUS5S43bX4E0MuoYZQs0WS8thcE-tgYaQVIwgGz4a2nLs15f47SdSPy18dogOyQJKUosoiQx5GHszttDl3lXEeb6GmC5a9TzW9KWLRJSi-4gxUiYuW2grD=s1360-w1360-h1020" alt="Restaurant">
+      <div class="see-more">
+        <a href="https://www.google.com/maps/place/White+Hill+Hotel/@41.3217387,19.4306349,17z/data=!4m10!3m9!1s0x134fdbf496f23af5:0xfd5b14e396f79751!5m3!1s2025-05-27!4m1!1i2!8m2!3d41.3217387!4d19.4306349!16s%2Fg%2F11t29gdq26?entry=ttu&g_ep=EgoyMDI1MDQwOS4wIKXMDSoASAFQAw%3D%3D" target="_blank">SHIKO NE HARTE</a>
+      </div>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="review-card">
+      <div class="review-header">
+        <div class="restaurant-name">Chef House by Cimi</div>
+      </div>
+      <div class="review-stars">★★★★★</div>
+      <div class="review-body">Ambient i bukur, ushqim i shkëlqyer dhe staf miqësor por profesionist. Çmimet janë më të ulëta se në shëtitoren kryesore. Peshku ishte i freskët dhe i gatuar në mënyrë perfekte, dhe na ofruan edhe meze e ëmbëlsirë falas. Menytë janë në gjuhën lokale, por stafi flet anglisht dhe është shumë i gatshëm për të ndihmuar.</div>
+      <img class="review-img" src="https://lh3.googleusercontent.com/p/AF1QipO0LQv1aWyd4Rjn7012WVfKDu-vxuyrLMqMu6ig=s1360-w1360-h1020" alt="Restaurant">
+      <div class="see-more">
+        <a href="https://www.google.com/maps/place/Chef+House+by+Cimi/@41.3157566,19.4332653,17z/data=!4m16!1m9!3m8!1s0x134fdbf5c7cfe1d9:0x728a0ed0b44f91b1!2sChef+House+by+Cimi!8m2!3d41.3157566!4d19.4332653!9m1!1b1!16s%2Fg%2F11vrkhf9b1!3m5!1s0x134fdbf5c7cfe1d9:0x728a0ed0b44f91b1!8m2!3d41.3157566!4d19.4332653!16s%2Fg%2F11vrkhf9b1?entry=ttu&g_ep=EgoyMDI1MDQwOS4wIKXMDSoASAFQAw%3D%3D" target="_blank">SHIKO NE HARTE</a>
+      </div>
+    </div>
+
+    <!-- Slide 4 -->
+    <div class="review-card">
+      <div class="review-header">
+        <div class="restaurant-name">Aragosta Hotel</div>
+      </div>
+      <div class="review-stars">★★★★☆</div>
+      <div class="review-body">Vetëm 2-3 minuta nga plazhi dhe shumë afër hyrjes së qytetit (tek skulptura e madhe), ky hotel është ideal për pushime. Gjendet pranë dyqanit Coal, ku mund të gjeni gjithçka që ju nevojitet. Dhomat janë të pajisura plotësisht, me shtretër komodë, jastëkë të butë dhe Wi-Fi me shpejtësi të lartë. Çdo gjë funksionon në mënyrë perfekte!</div>
+      <img class="review-img" src="https://lh3.googleusercontent.com/p/AF1QipODvddAqhcTDlgOpZnFx-IzaCgrZPXjafE6_vd8=s1360-w1360-h1020" alt="Restaurant">
+      <div class="see-more">
+        <a href="https://www.google.com/maps/place/Aragosta+Hotel/@41.3122394,19.4341225,17z/data=!4m10!3m9!1s0x134fda53b0eec569:0x51e85958983ba06e!5m3!1s2025-05-27!4m1!1i2!8m2!3d41.3122394!4d19.4341225!16s%2Fg%2F1td5tfmc?entry=ttu&g_ep=EgoyMDI1MDQwOS4wIKXMDSoASAFQAw%3D%3D" target="_blank">SHIKO NE HARTE</a>
+      </div>
+    </div>
+
+  </div>
+  <button class="arrow-btn arrow-right" onclick="scrollCarousel(1)">&#8594;</button>
+</div>
+
+<script>
+  function scrollCarousel(direction) {
+    const container = document.getElementById("carousel");
+    const scrollAmount = 320; // width + margin
+    container.scrollBy({
+      left: direction * scrollAmount,
+      behavior: "smooth"
+    });
+  }
+</script>
+    
 </body>
 </html>
