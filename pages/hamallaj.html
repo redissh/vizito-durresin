@@ -155,6 +155,113 @@
         </div>
     </section>
 
+    <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 40px;
+    }
+
+    .carousel-wrapper {
+      position: relative;
+      max-width: 100%;
+    }
+
+    .carousel-container {
+      display: flex;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      scroll-snap-type: x mandatory;
+      gap: 20px;
+      padding: 20px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .review-card {
+      flex: 0 0 300px;
+      scroll-snap-align: start;
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid #ddd;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .review-header {
+      padding: 15px;
+    }
+
+    .restaurant-name {
+      font-size: 18px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .review-stars {
+      color: #f5a623;
+      margin: 0 15px;
+      font-size: 18px;
+    }
+
+    .review-body {
+      padding: 10px 15px;
+      font-size: 14px;
+      flex-grow: 1;
+    }
+
+    .review-img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .see-more {
+      text-align: right;
+      padding: 10px 15px;
+    }
+
+    .see-more a {
+      text-decoration: none;
+      color: #1a73e8;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .see-more a:hover {
+      text-decoration: underline;
+    }
+
+    .arrow-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: #fff;
+      border: none;
+      font-size: 24px;
+      padding: 10px;
+      cursor: pointer;
+      z-index: 10;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      border-radius: 50%;
+    }
+
+    .arrow-btn:hover {
+      background: #f0f0f0;
+    }
+
+    .arrow-left {
+      left: 0;
+    }
+
+    .arrow-right {
+      right: 0;
+    }
+  </style>
+    
       <!-- Slide 1 -->
     <div class="review-card">
       <div class="review-header">
