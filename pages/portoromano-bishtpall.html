@@ -154,13 +154,186 @@
             <div class="image-item" style="background-image: url('imgpb/4.jpg')"></div>
         </div>
     </section>
-      <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
-    <df-messenger
-      chat-icon="https:&#x2F;&#x2F;cdn-icons-png.flaticon.com&#x2F;512&#x2F;1908&#x2F;1908337.png"
-      intent="WELCOME"
-      chat-title="VizitoDurrësin_Bot"
-      agent-id="abbbdfeb-b643-487c-8847-7975e8c98c3a"
-      language-code="sq"
-    ></df-messenger>
+
+    <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 40px;
+    }
+
+    .carousel-wrapper {
+      position: relative;
+      max-width: 100%;
+    }
+
+    .carousel-container {
+      display: flex;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      scroll-snap-type: x mandatory;
+      gap: 20px;
+      padding: 20px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .review-card {
+      flex: 0 0 300px;
+      scroll-snap-align: start;
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid #ddd;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .review-header {
+      padding: 15px;
+    }
+
+    .restaurant-name {
+      font-size: 18px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .review-stars {
+      color: #f5a623;
+      margin: 0 15px;
+      font-size: 18px;
+    }
+
+    .review-body {
+      padding: 10px 15px;
+      font-size: 14px;
+      flex-grow: 1;
+    }
+
+    .review-img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .see-more {
+      text-align: right;
+      padding: 10px 15px;
+    }
+
+    .see-more a {
+      text-decoration: none;
+      color: #1a73e8;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .see-more a:hover {
+      text-decoration: underline;
+    }
+
+    .arrow-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: #fff;
+      border: none;
+      font-size: 24px;
+      padding: 10px;
+      cursor: pointer;
+      z-index: 10;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      border-radius: 50%;
+    }
+
+    .arrow-btn:hover {
+      background: #f0f0f0;
+    }
+
+    .arrow-left {
+      left: 0;
+    }
+
+    .arrow-right {
+      right: 0;
+    }
+  </style>
+</head>
+<body>
+
+<div class="carousel-wrapper">
+  <button class="arrow-btn arrow-left" onclick="scrollCarousel(-1)">&#8592;</button>
+  <div class="carousel-container" id="carousel">
+
+    <!-- Slide 1 -->
+    <div class="review-card">
+      <div class="review-header">
+        <div class="restaurant-name">Prestige Resort</div>
+      </div>
+      <div class="review-stars">★★★★★</div>
+      <div class="review-body">Ky hotel ofron dhoma të pastra, të bollshme dhe me ajër të kondicionuar. Mëngjesi i përfshirë është i pasur dhe i shijshëm. I rrethuar nga pemë që ofrojnë hije natyrale, ambienti është perfekt për çlodhje. Plazhi është afër dhe hoteli ofron çadra e peshqirë falas.</div>
+      <img class="review-img" src="https://lh3.googleusercontent.com/proxy/N6nxh8x1Fm13tSvYevf48DULndUfSPP7coS_8opa_Em6-M4Eg4HhpFyYUHWaZfe5SZRH_HZSVGfirij9_hcJSgvHm0lzc3th1PncamUpjrsAtN12HYKz9HfVbFf347FEW6dJemhgcZxEnJdCrcT1tFSLmyW83Q=s1360-w1360-h1020">
+      <div class="see-more">
+        <a href="https://www.google.com/maps/place/Prestige+Resort/@41.2313819,19.5135132,17z/data=!4m10!3m9!1s0x134fdee15a20c5d1:0xee4ff3ec7a2783d6!5m3!1s2025-05-27!4m1!1i2!8m2!3d41.2313819!4d19.5135132!16s%2Fg%2F11f10f4y_b?entry=ttu&g_ep=EgoyMDI1MDQwOS4wIKXMDSoASAFQAw%3D%3D" target="_blank">SHIKO NE HARTE</a>
+      </div>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="review-card">
+      <div class="review-header">
+        <div class="restaurant-name">Insifa Beach</div>
+      </div>
+      <div class="review-stars">★★★★★</div>
+      <div class="review-body">Restoranti ofron shërbim të shkëlqyer dhe një atmosferë mikpritëse. Stafi është i sjellshëm dhe profesional, duke siguruar një shërbim të shpejtë dhe të kujdesshëm. Ushqimi është i shijshëm, me peshk të freskët dhe pjatat tradicionale të përgatitura me kujdes. Vendi ka një pamje relaksuese, ideale për një pushim të qetë.</div>
+      <img class="review-img" src="https://lh3.googleusercontent.com/gps-cs-s/AB5caB8oTbisvfL6N9qvZGqUS5S43bX4E0MuoYZQs0WS8thcE-tgYaQVIwgGz4a2nLs15f47SdSPy18dogOyQJKUosoiQx5GHszttDl3lXEeb6GmC5a9TzW9KWLRJSi-4gxUiYuW2grD=s1360-w1360-h1020" alt="Restaurant">
+      <div class="see-more">
+        <a href="https://www.google.com/maps/place/Insifa+Beach/@41.5349083,19.5120192,17z/data=!3m1!4b1!4m6!3m5!1s0x134e2bafcdb64243:0x4ffa92da483ea7c5!8m2!3d41.5349083!4d19.5120192!16s%2Fg%2F11cr_hbfr1?entry=ttu&g_ep=EgoyMDI1MDQwOS4wIKXMDSoASAFQAw%3D%3D" target="_blank">SHIKO NE HARTE</a>
+      </div>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="review-card">
+      <div class="review-header">
+        <div class="restaurant-name">Melia Durres Albania</div>
+      </div>
+      <div class="review-stars">★★★★★</div>
+      <div class="review-body">Ky vend është një parajsë e vërtetë! I vendosur direkt pranë plazhit, ofron pamje mahnitëse, dhoma shumë komode dhe ushqim të shkëlqyer. Peshku është i freskët, koktejet janë të shkëlqyera dhe stafi është jashtëzakonisht miqësor. Pishina është kristal e pastër, plazhi është i pastruar dhe atmosfera është perfekte. Këtu mund të kaloni ditët duke u relaksuar nën diell dhe netët duke shijuar muzikë live me një koktej në dorë. Për ata që kërkojnë relaksim dhe luks, ky është vendi ideal.</div>
+      <img class="review-img" src="https://lh3.googleusercontent.com/p/AF1QipMsM3RT1ENd11JHvqyJWuHfqKdJCzk0xL14nEmV=s1360-w1360-h1020" alt="Restaurant">
+      <div class="see-more">
+        <a href="https://www.google.com/maps/place/Melia+Durres+Albania/@41.518025,19.524206,17z/data=!3m1!4b1!4m9!3m8!1s0x134e2b4d49481b95:0x8f62ec6f4a2f4805!5m2!4m1!1i2!8m2!3d41.518025!4d19.524206!16s%2Fg%2F11s9ybz0hs?entry=ttu&g_ep=EgoyMDI1MDQwOS4wIKXMDSoASAFQAw%3D%3D" target="_blank">SHIKO NE HARTE</a>
+      </div>
+    </div>
+
+    <!-- Slide 4 -->
+    <div class="review-card">
+      <div class="review-header">
+        <div class="restaurant-name">Fish Land</div>
+      </div>
+      <div class="review-stars">★★★★☆</div>
+      <div class="review-body">Nëse po udhëtoni me familjen ose partnerin, ky është një vend që nuk duhet humbur. Shërbimi është i shpejtë dhe çmimet janë shumë të arsyeshme, me ushqim të freskët dhe shumë të shijshëm. Peshku ishte i freskët dhe gjithçka ishte përgatitur me kujdes. Ky vend është shumë i rekomanduar për ata që ndodhen afër dhe kërkojnë një vakt të shkëlqyer.  Ushqimi dhe atmosfera janë perfekte. Stafi ishte shumë i sjellshëm dhe shërbimi ishte i shpejtë dhe efikas.</div>
+      <img class="review-img" src="https://lh3.googleusercontent.com/p/AF1QipNeagkZFmhIVUE1TDxlw3DfCqeQ-HVSZXKlIHg=s1360-w1360-h1020" alt="Restaurant">
+      <div class="see-more">
+        <a href="https://www.google.com/maps/place/Balkan+Bites" target="_blank">SHIKO NE HARTE</a>
+      </div>
+    </div>
+
+  </div>
+  <button class="arrow-btn arrow-right" onclick="scrollCarousel(1)">&#8594;</button>
+</div>
+
+<script>
+  function scrollCarousel(direction) {
+    const container = document.getElementById("carousel");
+    const scrollAmount = 320; // width + margin
+    container.scrollBy({
+      left: direction * scrollAmount,
+      behavior: "smooth"
+    });
+  }
+</script> 
+    
 </body>
 </html>
