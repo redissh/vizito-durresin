@@ -411,6 +411,26 @@
 
 <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
+<script>
+  function autoTranslateToEnglish() {
+    const interval = setInterval(() => {
+      const frame = document.querySelector('iframe.goog-te-menu-frame');
+      if (frame) {
+        const innerDoc = frame.contentDocument || frame.contentWindow.document;
+        const enOption = innerDoc.querySelector('a[lang="en"]');
+        if (enOption) {
+          enOption.click();
+          clearInterval(interval);
+        }
+      }
+    }, 100);
+  }
+
+  // Wait a bit after the widget initializes
+  window.addEventListener('load', () => {
+    setTimeout(autoTranslateToEnglish, 1000);
+  });
+</script>
     
 </body>
 </html>
